@@ -14,10 +14,15 @@ class UserController {
 
     onClickClean() {
         this.form.addEventListener('click', () => {
-            let spanEmail = document.getElementById("msgemail");
+            let spanEmail = document.getElementById("msgemail")
             let spanPhone = document.getElementById("msgphone")
+            let spanPassword = document.getElementById("msgpassword")
+            let spanNone = document.getElementById("none")
+
             spanEmail.innerHTML = " "
             spanPhone.innerHTML = " "
+            spanPassword.innerHTML = " "
+            spanNone.innerHTML = " "
         })
     }
 
@@ -47,11 +52,17 @@ class UserController {
             (dominio.search(".")!=-1) &&
             (dominio.indexOf(".") >=1)&&
             (dominio.lastIndexOf(".") < dominio.length - 1)) {
-        document.getElementById("msgemail").innerHTML="E-mail válido";
-        alert("E-mail valido")
+            alert("E-mail valido")
+            return element.value
         } else {
-        document.getElementById("msgemail").innerHTML="<font color='red'>E-mail inválido </font>";
-        alert("E-mail invalido")
+            let inputText = document.getElementById("id_userLogin")
+            inputText.classList.add("error")
+            
+            let spanEmail = document.getElementById("msgemail")
+            spanEmail.classList.add("error-text")
+            spanEmail.innerHTML = "E-mail inválido"
+
+            alert("E-mail invalido")
         }
     }
 
@@ -79,21 +90,44 @@ class UserController {
                 const part2 = currentText.slice(4,8)
                 setText = `${part1}-${part2}`
             }
-            element.value = setText
+
+            return element.value = setText
         } else {
-            document.getElementById("msgphone").innerHTML="<font color='red'>Número inválido</font>";
+            let inputText = document.getElementById("id_userLogin")
+            inputText.classList.add("error")
+
+            let spanPhone = document.getElementById("msgphone")
+            spanPhone.classList.add("error-text")
+            spanPhone.innerHTML = "Número inválido"
+            
             alert("Número de telefone invalido")
+        }
+    }
+
+    validationPassword(element) {
+        let dataUser = element.value
+        if(dataUser.length < 4 || dataUser.length > 60) {
+            let spanPassword = document.getElementById("msgpassword")
+            spanPassword.classList.add("error-text")
+            spanPassword.innerHTML = "A senha deve ter entre 4 e 60 caracteres."
+        } else {
+            return dataUser
         }
     }
 
     setValidation(element) {
         let dataUser = element.value
+        let regex = /[0-9]/g
 
         if(dataUser.indexOf("@") > -1) {
             this.validationEmail(element)
-        } else {
+        } else if(regex.test(dataUser)) {
             this.validationPhone(element)
-        }   
+        } else {
+            let spanNone = document.getElementById("none")
+            spanNone.classList.add("error-text")
+            spanNone.innerHTML = "Informe um email ou número de telefone válido."
+        }
     }
 
     generalValidation(element) {
@@ -102,10 +136,10 @@ class UserController {
                 this.setValidation(element)
                 break
             case "password": 
-                console.log(element.value)
+                this.validationPassword(element)
                 break
             default:
-                console.log("Valores não identificados")
+                console.log("Valores não verificados")
         }   
     }
        

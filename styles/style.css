@@ -108,12 +108,24 @@ form input[type="text"], form input[type="password"] {
 
     background: var(--background-input);
 
-    border: 0;
+    border: 0 none;
     border-radius: 0.4rem;
     
     font-size: 1.6rem;
     color: var(--primary-gray);
     max-height: 52px;
+}
+
+/* validation class */ 
+.error {
+    border-bottom: 5px solid orangered;
+}
+
+.error-text {
+    display: block;
+    margin-top: 1.2rem;
+    font: 1rem;
+    color: orangered;
 }
 
 /* form button ==== */
