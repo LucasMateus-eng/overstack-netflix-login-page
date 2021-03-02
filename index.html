@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+
+    <link rel="icon" type="imagem/png" href="/images/netflix.png" />
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div class="structure">
+        <div class="background">
+            <header class="header">
+                <div class="logo-container">
+                    <a href="/">
+                        <img src="./images/netflix-logo.svg" alt="Netflix">
+                    </a>
+                </div>
+            </header>
+    
+            <main>
+                <div class="login-body">
+                    <h1 class="flex-item">Entrar</h1>
+    
+                    <div class="form-container flex-item">
+                        <form id="form-login">
+                            <div class="input-group">
+                                <input type="text" name="userLogin" id="id_userLogin"
+                                placeholder="E-mail ou número de telefone"> 
+                                <span id="msgemail"></span>
+                                <span id="msgphone"></span>              
+                            </div>
+
+                            <div class="input-group">
+                                <input type="password" name="password" id="password" placeholder="Senha">
+                            </div>
+                           
+                            <button type="submit">Entrar</button>
+    
+                            <div class="checkbox-group">
+                                <div class="checkbox">
+                                    <input type="checkbox" name="remember-me" id="remember-me" checked>
+                                    <span>Lembre-se de mim</span>
+                                </div>
+    
+                                <a href="https://www.netflix.com/br/LoginHelp"><span>Precisa de ajuda?</span></a>
+                            </div>
+    
+                            <div class="hybrid-login">
+                                <div class="fb-login">
+                                    <a href="">
+                                        <img src="./images/facebook.svg" alt="Facebook">
+                                        <span>Conectar com Facebook</span>
+                                    </a>
+                                </div>
+    
+                                <div class="login-signup-now">
+                                    <span>Novo por aqui?</span>
+                                    <a href="https://www.netflix.com/br/">Assine agora.</a>
+                                </div>
+    
+                                <div class="recaptcha">
+                                    <span>Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um
+                                        robô.</span>
+                                    <a href="/">Saiba mais.</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+            
+            <div class="footer-divider"></div>
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-top">
+                        <p>
+                            Dúvidas?
+                            Ligue <a href="tel:0800-761-4631">0800-761-4631</a>
+                        </p>
+                    </div>
+        
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="https://help.netflix.com/pt/node/412">Perguntas frequentes</a></li>
+                            <li><a href="https://help.netflix.com/pt/">Centro de ajuda</a></li>
+                            <li><a href="https://help.netflix.com/legal/termsofuse">Termos de uso</a></li>
+                            <li><a href="https://help.netflix.com/legal/privacy">Privacidade</a></li>
+                            <li><a href="https://help.netflix.com/pt/node/100637?ba=SwiftypeResultClick&q=cookies">Preferências
+                                    de cookies</a></li>
+                            <li><a href="https://help.netflix.com/legal/corpinfo">Informações corporativas</a></li>
+                        </ul>
+                    </div>
+        
+                    <div class="lang-container-selection">
+                        <img src="/images/global.svg" alt="Selecionar linguagem">
+        
+                        <select name="language-selection" id="language-selection">
+                            <option value="pt-BR" data-language="pt" data-country="BR">Português</option>
+                            <option value="en" data-language="en" data-country="BR">English</option>
+                        </select>
+                    </div>
+                </div>            
+            </footer>
+        </div> 
+    </div> 
+    <script src="./src/Models/User.js"></script>
+    <script src="./src/Controllers/UseController.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

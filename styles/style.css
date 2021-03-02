@@ -1,0 +1,388 @@
+/* Css Reset */
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* variables ==== */
+:root {
+    --background: rgb(0, 0, 0, 0.4);
+    --background-gradient: linear-gradient(to bottom,rgba(0,0,0,.5) 0,rgba(0,0,0,0) 100%);
+    --background-login-body: rgba(0,0,0,.75);
+    --background-footer: rgba(0,0,0,.5);
+    --background-input: #333;
+    --background-button: #E50914;
+    --primary-gray: var(#8c8c8c);
+    --light-gray: #b3b3b3;
+    --dark-gray: #757575;
+    --ancor-color: #0071EB;
+    --footer-divider: #e5e5e5;
+}
+
+/* Global ==== */
+html {
+    font-size: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.structure {
+    min-height: 100vh;
+    height: 100%;
+    background: url('../images/bg-login.jpg') no-repeat top left;
+}
+
+.background {
+    min-height: 100%;
+    min-width: 100%;
+    background: var(--background);
+    background-image: var(--background-gradient);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header ==== */
+header {
+    width: 100%;
+    height: 90px;
+    padding: 2.3rem 0 2.5rem 4rem;
+}
+
+.logo-container {
+    width: 100%;
+    max-width: 960px;
+}
+
+.logo-container a img {
+    width: 167px; 
+    height: 45px;
+}
+
+/* Main ==== */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* form-login ==== */
+.login-body {
+    display: flex;
+    flex-direction: column;
+
+    width: 33%;
+   
+    padding: 6.2rem 6.2rem 0;
+    margin-bottom: 9rem;
+  
+    border-radius: 0.3rem;
+    
+    background: var(--background-login-body);
+}
+
+.login-body h1 {
+    font-size: 3.2rem;
+    margin-bottom: 2.8rem;
+}
+
+.login-body.flex-item {
+    flex: 1;
+}
+
+/* input ==== */
+form .input-group {
+    margin-bottom: 1.3rem;
+}
+
+form input[type="text"], form input[type="password"] {
+    width: 100%;
+    padding: 2rem;
+
+    background: var(--background-input);
+
+    border: 0;
+    border-radius: 0.4rem;
+    
+    font-size: 1.6rem;
+    color: var(--primary-gray);
+    max-height: 52px;
+}
+
+/* form button ==== */
+form button {
+    width: 100%;
+    
+    padding: 1.6rem;
+    margin: 2.4rem 0 1.2rem;
+
+    background: var(--background-button);
+
+    border: 0;
+    border-radius: 0.4rem;
+
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #fff;
+    max-height: 52px;
+    cursor: pointer;
+}
+
+/* checkbox input ==== */
+form .checkbox-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: auto;
+}
+
+form .checkbox-group span, form .checkbox span {
+    font-size: 1.3rem;
+    color: var(--light-gray);
+}
+
+form .checkbox-group a:hover {
+    color:  var(--light-gray);
+    text-decoration: underline;
+}
+
+/* hybrid-login (form) ==== */
+form .hybrid-login {
+    margin-top: 6rem;
+
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-gap: 1.5rem;
+}
+
+/* facebook login ==== */
+form .fb-login {
+    width: auto;
+    max-width: 320px;
+}
+
+form .fb-login a {
+    display: flex;
+    align-items: center;
+}
+
+form .fb-login img {
+    width: 2rem;
+    height: 2rem;
+}
+
+form .fb-login span {
+    font-size: 1.4rem;
+    margin-left: 1rem;
+    color:  var(--light-gray);
+}
+
+/* signup-now ==== */
+form .login-signup-now span {
+    font-size: 1.6rem;
+    color: var(--primary-gray);
+    text-align: left;
+}
+
+form .login-signup-now a {
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+form .login-signup-now a:hover {
+    text-decoration: underline;
+}
+
+/* recaptcha ==== */
+form .recaptcha {
+    width: auto;
+}
+
+form .recaptcha span {
+    font-size: 1.3rem;
+    color: var(--primary-gray);
+    text-align: left;
+}
+
+form .recaptcha a {
+    font-size: 1.3rem;
+    color: var(--ancor-color);
+}
+
+form .recaptcha a:hover {
+    text-decoration: underline;
+}
+
+/* footer-divider ==== */
+
+.footer-divider {
+    height: 0;
+    width: 100%;
+    border-top: 1px solid var(--footer-divider);
+
+    display: none;
+}
+
+/* footer ==== */
+footer {
+    width: 100%;
+    height: 100%; 
+    padding: 4rem 0;
+
+    background: var(--background-footer);
+}
+
+/* footer container ==== */
+footer .footer-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-gap: 3rem;
+}
+
+/* footer-top ==== */
+footer .footer-top p, .footer-top p > a {
+    font-size: 1.6rem;
+    color: var(--dark-gray);
+}
+
+footer .footer-top a:hover {
+    text-decoration: underline;
+}
+
+/* footer-links*/
+footer .footer-links {
+   max-width: 1000px;
+   font-size: 1.3rem;
+}
+
+
+footer .footer-links ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-links li {
+    padding-right: 1.2rem;
+    margin-bottom: 1.6rem;
+    min-width: 100px;
+    width: 25%; 
+}
+
+.footer-links li a {
+    color: var(--dark-gray);
+}
+
+.footer-links li a:hover {
+    text-decoration: underline;
+}
+
+/* lang-container-selection ==== */
+footer .lang-container-selection {
+    max-width: 140px;
+    max-height: 48px;
+    padding: 2rem;
+
+    background: #000;
+    background-image: none;
+
+    border: 1px solid var(--background-input);
+    border-radius: 2px;
+    
+    display: flex;
+    align-items: center;
+}
+
+footer .lang-container-selection img {
+    width: 16px;
+    height: 16px;
+
+    margin-right: 1rem;
+}
+
+footer .lang-container-selection select {
+    background: #000;
+    color: var(--dark-gray);
+    border: none;
+}
+
+/* at rules - responsive ==== */
+@media screen and (min-width: 741px) {
+    .login-body {
+        min-width: 450px;
+        min-height: 660px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .structure {
+        background: #000;
+    }
+
+    header {
+        padding: 2.3rem 0 7rem 2.2rem;
+    }
+
+    .login-body {
+        margin: 0 auto;
+        padding: 0 5%;
+        width: 100%;
+        min-height: 550px;
+
+        background: transparent;
+    }
+
+    .recaptcha {
+        padding-bottom: 5rem;
+    }
+
+    .form-container  {
+        padding: 20px 0 30px;
+    }
+
+    .footer-divider {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    header {
+        height: 45px;
+    }
+
+    .logo-container a img {
+        width: 75px; 
+        height: 32px;
+    }
+}
+
+@media screen and (max-width: 655px) {
+    .logo-container a img {
+        width: 167px; 
+        height: 45px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .logo-container a img {
+        width: 75px; 
+        height: 32px;
+    }
+
+    footer {
+        min-width: 190px;
+    }
+}
